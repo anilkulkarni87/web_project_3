@@ -1,61 +1,39 @@
-@import url(./__link/place__link.css);
-@import url(./__image/place__image.css);
-@import url(./__text/place__text.css);
-@import url(./__title/place__title.css);
-@import url(./__url-heading/place__url-heading.css);
-@import url(./__website/place__website.css);
-@import url(./__text-container/place__text-container.css);
+@import url('./__title/place__title.css');
+@import url('./__img/place__img.css');
+@import url('./__website/place__website.css');
+@import url('./__url-heading/place__url-heading.css');
+@import url('./__link/place__link.css');
+@import url('./__piece/place__piece.css');
+@import url('./__paragraph/place__paragraph.css');
 
 .place{
-  margin-top: 92px;
-  display: grid;
-  grid-gap: 40px;
-  row-gap: 48px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-  "title website"
-  "image text"
-  "image text"
-  "image text";
-  margin-right: 148px;
-  margin-left: 148px;
-  max-width: 984px;
-  box-sizing: border-box;
+    max-width: 984px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 48px 40px;
+    padding-bottom: 80px;
+    margin: 0 auto;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width:768px) and (max-width:1023px){
   .place{
-    max-width: 928px;
-
-    margin-right: 48px;
-    margin-left: 48px;
-    grid-gap: 32px;
-    row-gap: 24px;
+    grid-gap: 48px 28px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .place{
-    max-width: 720px;
-
-    margin-top: 88px;
-    margin-right: 24px;
-    margin-left: 24px;
-    grid-gap: 28px;
-    row-gap: 24px;
+  @media screen and (min-width:320px) and (max-width:767px){
+    .place{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 48px;
+      padding-top:0;
+    }
   }
-}
 
-@media screen and (max-width: 450px) {
-  .place{
-    margin-top: 48px;
-    grid-template-columns: auto;
-    grid-gap: 24px;
-    margin-right: 16px;
-    margin-left: 16px;
-    grid-template-areas: 
-    "title"
-    "image"
-    "text";
+  .place:nth-of-type(5n){
+    padding-bottom: 0;
   }
-}
